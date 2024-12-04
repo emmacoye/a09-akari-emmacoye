@@ -22,23 +22,23 @@ public class MessageBoxView implements FXComponent {
   @Override
   public Parent render() {
     VBox messagePane = new VBox();
-    messagePane.setPadding(new Insets(5));
+    messagePane.setPadding(new Insets(10, 0, 0, 0));
     messagePane.setAlignment(Pos.CENTER);
 
-
     // Add the puzzle index label
-    int currentIndex = model.getActivePuzzleIndex() + 1; // Convert to 1-based index
+    int currentIndex = model.getActivePuzzleIndex() + 1;
     int totalPuzzles = model.getPuzzleLibrarySize();
     Label puzzleIndexLabel = new Label("Puzzle " + currentIndex + " of " + totalPuzzles);
-    puzzleIndexLabel.setStyle("-fx-font-size: 14px; -fx-font-weight: bold;");
+    puzzleIndexLabel.setStyle("-fx-font-size: 30px; -fx-font-weight: bold;");
 
     if (model.isSolved()) {
       Text message = new Text("Puzzle Solved!");
-      message.setStyle("-fx-font-size: 20px; -fx-font-weight: bold;");
+      message.setStyle("-fx-font-size: 40px; -fx-font-weight: bold;");
       messagePane.getChildren().add(message);
     }
 
     messagePane.getChildren().add(puzzleIndexLabel);
+
     return messagePane;
   }
 }

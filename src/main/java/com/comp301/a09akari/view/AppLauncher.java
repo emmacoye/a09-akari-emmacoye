@@ -48,20 +48,17 @@ public class AppLauncher extends Application {
 
     stage.show();
 
-
-    model.addObserver(new ModelObserver() {
-      @Override
-      public void update(Model model) {
-        root.setCenter(puzzleView.render());
-        root.setTop(messageBoxView.render());
-      }
-    });
-
-
+    model.addObserver(
+        new ModelObserver() {
+          @Override
+          public void update(Model model) {
+            root.setCenter(puzzleView.render());
+            root.setTop(messageBoxView.render());
+          }
+        });
   }
 
   public static void main(String[] args) {
     launch();
   }
-
 }

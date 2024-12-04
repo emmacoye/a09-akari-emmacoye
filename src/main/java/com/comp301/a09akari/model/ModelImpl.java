@@ -181,7 +181,6 @@ public class ModelImpl implements Model {
       int x = r + direction[0];
       int y = c + direction[1];
 
-
       if (x >= 0 && x < puzzle.getHeight() && y >= 0 && y < puzzle.getWidth()) {
         CellType adjacentType = puzzle.getCellType(x, y);
         // Check if the adjacent cell is a corridor and contains a lamp

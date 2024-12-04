@@ -90,16 +90,16 @@ public class PuzzleView implements FXComponent {
     grid.setVgap(5);
     grid.setPadding(new Insets(10));
 
-    // Create a StackPane to wrap and center the grid
+    // Create a StackPane to center the grid
     StackPane centerPane = new StackPane();
     centerPane.getChildren().add(grid);
-    centerPane.setAlignment(Pos.CENTER);  // This centers the grid both horizontally and vertically
+    centerPane.setAlignment(Pos.CENTER);
 
-    // Create a VBox for the whole layout
     VBox vbox = new VBox();
-    vbox.setAlignment(Pos.TOP_CENTER);  // Align at the top, but the grid will be centered inside it
-    vbox.getChildren().add(centerPane); // Add the StackPane (which holds the grid) into the VBox
+    vbox.getChildren().add(centerPane);
 
-    return vbox;  // Return the VBox as the parent container
+    vbox.setPadding(new Insets(10, 50, 10, 120));
+
+    return vbox;
   }
-  }
+}

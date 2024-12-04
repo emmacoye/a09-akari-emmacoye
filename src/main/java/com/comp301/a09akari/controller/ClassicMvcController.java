@@ -15,5 +15,4 @@ public interface ClassicMvcController {
 
   /** Handles the click event on the cell at row r, column c */
   void clickCell(int r, int c);
-
 }
