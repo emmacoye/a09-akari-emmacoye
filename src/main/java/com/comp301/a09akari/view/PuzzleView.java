@@ -8,6 +8,8 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -46,6 +48,8 @@ public class PuzzleView implements FXComponent {
         Rectangle cell = new Rectangle(40, 40);
         // border color
         cell.setStroke(Color.BLACK);
+        cell.setArcWidth(10);
+        cell.setArcHeight(10);
 
         CellType cellType = model.getActivePuzzle().getCellType(r, c);
         if (cellType == CellType.WALL) {
@@ -89,17 +93,8 @@ public class PuzzleView implements FXComponent {
     grid.setHgap(5);
     grid.setVgap(5);
     grid.setPadding(new Insets(10));
+    grid.setAlignment(Pos.CENTER);
 
-    // Create a StackPane to center the grid
-    StackPane centerPane = new StackPane();
-    centerPane.getChildren().add(grid);
-    centerPane.setAlignment(Pos.CENTER);
-
-    VBox vbox = new VBox();
-    vbox.getChildren().add(centerPane);
-
-    vbox.setPadding(new Insets(10, 50, 10, 120));
-
-    return vbox;
+    return grid;
   }
 }

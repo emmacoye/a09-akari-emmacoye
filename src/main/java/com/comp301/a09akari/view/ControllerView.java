@@ -37,12 +37,6 @@ public class ControllerView implements FXComponent {
     reset.setPrefWidth(150);
     reset.setPrefHeight(40);
 
-    // Set font size for button text
-    previous.setStyle("-fx-font-size: 16px;");
-    next.setStyle("-fx-font-size: 16px;");
-    random.setStyle("-fx-font-size: 16px;");
-    reset.setStyle("-fx-font-size: 16px;");
-
     previous.setOnAction(e -> controller.clickPrevPuzzle());
     next.setOnAction(e -> controller.clickNextPuzzle());
     random.setOnAction(e -> controller.clickRandPuzzle());
